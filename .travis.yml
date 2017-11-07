@@ -1,0 +1,16 @@
+language: java
+sudo: false
+jdk:
+  - oraclejdk8
+before_install:
+- git clone --depth 1 https://github.com/Cooperate-Project/BuildUtils.git /tmp/BuildUtils
+- . /tmp/BuildUtils/travisci/setup.sh
+install: true
+script:
+- mavenBuildWoSonar.sh
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+env:
+  global:  
+  - secure: "Z8IKzwauG/DFr8uQD8pQDVkG4SM/dlfmi8B6q8aabcbP9tC6vl8FgRbeAnSPbCENiVEOnoE24c+GDksPqki1KH2MovbqQ/d6PHggeetj4C8dAUFS7L4cDe08i/JDw0+qsTRrHq/BC9scOluyEm0bJt3em6DpRF1sYocMEd5vcFTCHDidQ030vyv7MViuWvQaJ9bBWQBiKdm8pZBocXMbGe9aP9pJKJo+WfWk3SV4tfIkpjn6cBr0hLc12bk2xHM6Ug9iXYJBdA3rV366eKgn8mHkVXoHIfNdS9fDQCabovMRVsWok9cFeqlphb15D3eYV0xdvw3UG7yiUTDqOAVMb8GI04UW0d0EzjMIWRgMDROeFnYBDV9K92orZeOpqlQreK+e2jdxr6znoqA8DIu/ctJ+JNl53elfn6KvgkopMbBxlrJwEoWl1E5d2cFCT6y9yh+NCd35vI3MbWJsvYrY38CDranKmMf4H0xwcv48N6VXCn0iYuo38Muay90zdsm7pZ6pS4dRpBg4IK/DPsZmLJqxQZnoZjNQDZC8N7soehMUIFKvdMHlTCsjN1WFTwEFnrAIKe/iF+LZ02pQ68a3reoeywZYCYMNbJhqAlclDtP5gnsaH0IkPjcasu6eZFZYhH+I86KJDpZFYaeOYa9dHJqdFz72z98tq62uzN6CX/4="
